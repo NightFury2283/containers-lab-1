@@ -81,6 +81,8 @@ jobs:
 
       - name: Test the built images
         run: |
+          export APP_IMAGE=ghcr.io/${{ github.repository }}/app:sha-${{ github.sha }}
+          export NGINX_IMAGE=ghcr.io/${{ github.repository }}/nginx:sha-${{ github.sha }}
           docker compose -f docker-compose.test.yml up -d
           sleep 30
           curl -f http://localhost/health || exit 1
