@@ -8,5 +8,3 @@ COPY index.html /usr/share/nginx/html/index.html
 #порт
 EXPOSE 80
 
-#не в фоне- daemon off
-CMD ["nginx", "-g", "daemon off;"]
