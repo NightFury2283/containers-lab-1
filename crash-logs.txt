@@ -1,0 +1,1 @@
+2026/03/31 20:26:36 Error creating table:dial tcp: lookup postgres-service on 10.96.0.10:53: server misbehaving
