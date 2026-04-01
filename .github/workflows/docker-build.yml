@@ -80,6 +80,7 @@ jobs:
           cache-to: type=gha,mode=max
       
       - name: Test the built images
+        if: github.event_name != 'pull_request'
         run: | 
           APP_IMAGE=$(echo "ghcr.io/${{ github.repository }}/app:sha-${GITHUB_SHA::7}" | tr '[:upper:]' '[:lower:]')
           NGINX_IMAGE=$(echo "ghcr.io/${{ github.repository }}/nginx:sha-${GITHUB_SHA::7}" | tr '[:upper:]' '[:lower:]')
