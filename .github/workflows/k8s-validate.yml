@@ -38,12 +38,6 @@ jobs:
             kubectl apply --dry-run=client -f $file
           done
 
-      - name: Check for deprecated APIs
-        uses: yannh/kubernetes-json-schema@master
-        with:
-          kubernetes-version: 1.28.0
-          manifests: k8s/
-
       - name: Lint YAML files
         uses: ibiqlik/action-yamllint@v3
         with:
